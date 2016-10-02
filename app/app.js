@@ -10,5 +10,14 @@ angular.module('hseslockers', [
 config(['$locationProvider', '$routeProvider', function($locationProvider, $routeProvider) {
   $locationProvider.hashPrefix('!');
 
-  $routeProvider.otherwise({redirectTo: '/dash'});
+  $routeProvider.
+    when('/dash', {
+      templateUrl: 'components/dash/dash.html',
+      controller: 'DashCtrl'
+    }).
+    when('admin', {
+      templateUrl: 'components/admin/admin.html',
+      controller: 'AdminCtrl'
+    }).
+    otherwise({redirectTo: '/dash'});
 }]);
