@@ -1,15 +1,15 @@
 'use strict';
 
-describe('hseslockers.view1 module', function() {
+describe('hseslockers.dash module', function() {
 
-  beforeEach(module('hseslockers.view1'));
+  beforeEach(module('hseslockers.dash'));
 
-  describe('view1 controller', function(){
+  describe('dash controller', function(){
 
     it('should ....', inject(function($controller) {
       //spec body
-      var view1Ctrl = $controller('View1Ctrl');
-      expect(view1Ctrl).toBeDefined();
+      var dashCtrl = $controller('DashCtrl');
+      expect(dashCtrl).toBeDefined();
     }));
 
   });

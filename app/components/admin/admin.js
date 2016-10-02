@@ -1,14 +1,14 @@
 'use strict';
 
-angular.module('hseslockers.view2', ['ngRoute'])
+angular.module('hseslockers.admin', ['ngRoute'])
 
 .config(['$routeProvider', function($routeProvider) {
-  $routeProvider.when('/view2', {
-    templateUrl: 'view2/view2.html',
-    controller: 'View2Ctrl'
+  $routeProvider.when('/admin', {
+    templateUrl: 'components/admin/admin.html',
+    controller: 'AdminCtrl'
   });
 }])
 
-.controller('View2Ctrl', [function() {
+.controller('AdminCtrl', [function() {
 
 }]);
