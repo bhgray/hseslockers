@@ -18,3 +18,6 @@
         simple student JSON file: idnumber, lastname, firstname
       - saved file as students.json
       - used phonecat step-7 to get http working loading the json data file.
+  * 01a-rename-dash
+    + I decided to rename the dashboard to studentlist, and implement a dashboard
+      later.

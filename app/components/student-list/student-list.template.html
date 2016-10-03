@@ -1,0 +1,24 @@
+<div class="container-fluid">
+  <div class="row">
+    <div class="col-md-2">
+    <!-- sidebar content -->
+      <p>Search:  <input ng-model="$ctrl.query" /></p>
+      <p>Sort By:
+        <select ng-model="$ctrl.orderProp">
+          <option value="firstname">First Name</option>
+          <option value="idnumber">ID Number</option>
+          <option value="lastname">Last Name</option>
+        </select>
+      </p>
+    </div>
+    <div class="col-md-10">
+      <!-- body -->
+      <ul class="students">
+      <li ng-repeat="student in $ctrl.students | filter:$ctrl.query | orderBy:$ctrl.orderProp">
+      <span>[{{student.idnumber}}]  {{student.firstname}} {{student.lastname}}</span>
+
+      </li>
+      </ul>
+    </div>
+  </div>
+</div>

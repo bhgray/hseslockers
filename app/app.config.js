@@ -6,8 +6,8 @@ config(['$locationProvider', '$routeProvider', function($locationProvider, $rout
   $locationProvider.hashPrefix('!');
 
   $routeProvider.
-    when('/dash', {
-      template:  '<dashlist></dashlist>'
+    when('/students', {
+      template:  '<student-list></student-list>'
     }).
     when('/students/:studentId', {
       template:  '<student-detail></student-detail>'
@@ -16,5 +16,5 @@ config(['$locationProvider', '$routeProvider', function($locationProvider, $rout
       templateUrl: 'components/admin/admin.html',
       controller: 'AdminCtrl'
     }).
-    otherwise({redirectTo: '/dash'});
+    otherwise({redirectTo: '/students'});
 }]);

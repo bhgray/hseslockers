@@ -1,3 +1,3 @@
 'use strict';
 
-angular.module('hseslockers.admin', ['ngRoute']);
+angular.module('admin', []);

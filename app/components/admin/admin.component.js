@@ -1,6 +1,6 @@
 'use strict';
 
-angular.module('hseslockers.admin')
+angular.module('admin')
 
 .controller('AdminCtrl', [function() {
 
