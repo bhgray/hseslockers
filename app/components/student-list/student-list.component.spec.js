@@ -1,8 +1,8 @@
 'use strict';
 
-describe('hseslockers.studentList module', function() {
+describe('studentList module', function() {
 
-  beforeEach(module('hseslockers.studentList'));
+  beforeEach(module('studentList'));
 
   describe('studentList controller', function(){
 

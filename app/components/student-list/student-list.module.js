@@ -1,3 +1,3 @@
 'use strict';
 
-angular.module('hseslockers.studentList', []);
+angular.module('studentList', ['ngRoute']);
