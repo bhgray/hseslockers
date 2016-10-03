@@ -27,3 +27,13 @@
 body {
   padding-top: 20px;
 }
+
+.students {
+  list-style: none;
+}
+
+.students li {
+  clear: both;
+  /*height: 20px;*/
+  padding-top: 15px;
+}

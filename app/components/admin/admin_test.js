@@ -1,6 +1,6 @@
 'use strict';
 
-describe('hseslockers.adminmodule', function() {
+describe('hseslockers.admin', function() {
 
   beforeEach(module('hseslockers.admin'));
 
