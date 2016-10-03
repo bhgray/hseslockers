@@ -11,8 +11,7 @@ config(['$locationProvider', '$routeProvider', function($locationProvider, $rout
 
   $routeProvider.
     when('/dash', {
-      templateUrl: 'components/dash/dash.html',
-      controller: 'DashCtrl'
+      template:  '<dashlist></dashlist>'
     }).
     when('/admin', {
       templateUrl: 'components/admin/admin.html',

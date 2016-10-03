@@ -1,0 +1,17 @@
+<div class="container-fluid">
+  <div class="row">
+    <div class="col-md-2">
+    <!-- sidebar content -->
+    Search:  <input ng-model="$ctrl.query" />
+    </div>
+    <div class="col-md-10">
+      <!-- body -->
+      <ul class="students">
+      <li ng-repeat="student in $ctrl.students | filter:$ctrl.query">
+      <span>{{student.firstname}} {{student.lastname}}</span>
+      <p>{{student.idnumber}}</p>
+      </li>
+      </ul>
+    </div>
+  </div>
+</div>
