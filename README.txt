@@ -17,4 +17,4 @@
       - created students directory and file students_faker_generate.js to generate
         simple student JSON file: idnumber, lastname, firstname
       - saved file as students.json
-      - used phonecat step-7 to get http working and a service.
+      - used phonecat step-7 to get http working loading the json data file.
