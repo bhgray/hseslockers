@@ -1,8 +1,8 @@
 'use strict';
 
-angular.module('hseslockers.dash')
-.component('dashlist', {
-  templateUrl: '/components/dash/dash.template.html',
+angular.module('studentList')
+.component('studentList', {
+  templateUrl: '/components/student-list/student-list.template.html',
     controller: ['$http',
       function DashCtrl($http) {
         // this is so that you can refer to this object in the callback b/c
