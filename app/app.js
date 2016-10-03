@@ -4,8 +4,7 @@
 angular.module('hseslockers', [
   'ngRoute',
   'hseslockers.dash',
-  'hseslockers.admin',
-  'hseslockers.version'
+  'hseslockers.admin'
 ]).
 config(['$locationProvider', '$routeProvider', function($locationProvider, $routeProvider) {
   $locationProvider.hashPrefix('!');
@@ -15,7 +14,7 @@ config(['$locationProvider', '$routeProvider', function($locationProvider, $rout
       templateUrl: 'components/dash/dash.html',
       controller: 'DashCtrl'
     }).
-    when('admin', {
+    when('/admin', {
       templateUrl: 'components/admin/admin.html',
       controller: 'AdminCtrl'
     }).
