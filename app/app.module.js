@@ -5,5 +5,6 @@ angular.module('hseslockers', [
   'ngRoute',
   'studentList',
   'studentDetail',
+  'lockerList',
   'admin'
 ]);
