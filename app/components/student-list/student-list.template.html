@@ -15,7 +15,7 @@
       <!-- body -->
       <ul class="students">
       <li ng-repeat="student in $ctrl.students | filter:$ctrl.query | orderBy:$ctrl.orderProp">
-      <span>[{{student.idnumber}}]  {{student.firstname}} {{student.lastname}}</span>
+      <a href="#!/students/{{student.id}}">[{{student.id}}]  {{student.firstname}} {{student.lastname}}</a>
 
       </li>
       </ul>

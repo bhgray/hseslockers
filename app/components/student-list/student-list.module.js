@@ -1,3 +1,3 @@
 'use strict';
 
-angular.module('studentList', ['ngRoute']);
+angular.module('studentList', ['core.student']);

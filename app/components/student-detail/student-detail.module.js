@@ -1,3 +1,1 @@
-angular.module('studentDetail', [
-  'ngRoute'
-]);
+angular.module('studentDetail', ['core.student']);

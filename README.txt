@@ -21,3 +21,16 @@
   * 01a-rename-dash
     + I decided to rename the dashboard to studentlist, and implement a dashboard
       later.
+    + merge complete to 01-student-data
+    + NOTE:  kept getting the windows "permission denied" on stat error.  The fix
+      seemed to be to close atom so that Windows doesn't keep a lock on the files.
+ * 01-student-data
+    + works except for the detail view.  The problem is that the Student service
+      retrieves a json file according to the studentId.  (See core/student/student.service.js)
+      Thus, for student 94, it would try to retrieve components/students/94.json, which doesn't
+      exist.  For a general GET, however, it grabs the entire students.json file which
+      has the entire list, which works fine.
+2016-10-04-TUE
+  * finished 01-student-data for students ONLY (no lockers yet)
+  * using json-server --watch db.json (renamed from students.json)
+  * can put int lockers and assignments into students.json as well.
