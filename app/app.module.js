@@ -6,5 +6,6 @@ angular.module('hseslockers', [
   'studentList',
   'studentDetail',
   'lockerList',
+  'lockerDetail',
   'admin'
 ]);

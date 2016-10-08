@@ -33,4 +33,7 @@
 2016-10-04-TUE
   * finished 01-student-data for students ONLY (no lockers yet)
   * using json-server --watch db.json (renamed from students.json)
-  * can put int lockers and assignments into students.json as well.
+  * can put lockers and assignments into db.json as well
+
+2016-10-08-SAT
+  
