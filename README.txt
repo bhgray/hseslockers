@@ -36,4 +36,9 @@
   * can put lockers and assignments into db.json as well
 
 2016-10-08-SAT
-  
+  * cool service:  http://www.mockapi.io
+  * created a mock api at:  http://www.mockapi.io/#/mocks/57f940e9a50475110077fc35
+    * student:  http://57f940e9a50475110077fc34.mockapi.io/api/v1/students/:id
+      - includes locker information
+    * locker:    http://57f940e9a50475110077fc34.mockapi.io/api/v1/lockers/:id
+    * locker assigned to a student:   http://57f940e9a50475110077fc34.mockapi.io/api/v1/students/5/lockers

@@ -9,10 +9,12 @@ angular.
   module('studentDetail').
   component('studentDetail', {
     templateUrl: 'components/student-detail/student-detail.template.html',
-    controller: ['$routeParams', 'Student',
-      function StudentDetailController($routeParams, Student) {
+    controller: ['$routeParams', 'Student', 'Locker',
+      function StudentDetailController($routeParams, Student, Locker) {
         var self = this;
-        self.student = Student.get({studentId: $routeParams.studentId});
+        var targetId = $routeParams.studentId;
+        self.student = Student.get({studentId: targetId});
+        self.locker = Locker.getLockerForStudent({studentId:  targetId});
       }
     ]
   });
