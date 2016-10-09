@@ -42,3 +42,14 @@
       - includes locker information
     * locker:    http://57f940e9a50475110077fc34.mockapi.io/api/v1/lockers/:id
     * locker assigned to a student:   http://57f940e9a50475110077fc34.mockapi.io/api/v1/students/5/lockers
+  * new services laid in and running.  One glitch is that mockapi.io doesn't
+    seem to/I don't know how to make the lockers resource searchable w/out the
+    parent object (student).  So I cloned the data, but the two Lockers resources
+    don't seem to match.  Small thing, bc in working version they will be synced.
+  * future:  I'd love to use localstorage or local nosql db....
+
+2016-10-09-SUN
+
+  * added branches:  develop and 04-ui-boostrap
+  * using: https://www.atlassian.com/git/tutorials/comparing-workflows/gitflow-workflow
+  * 
