@@ -13,12 +13,32 @@
     </div>
     <div class="col-md-10">
       <!-- body -->
-      <ul class="students">
-      <li ng-repeat="student in $ctrl.students | filter:$ctrl.query | orderBy:$ctrl.orderProp">
-      <a href="#!/students/{{student.id}}">[{{student.id}}]  {{student.firstname}} {{student.lastname}}</a>
-
-      </li>
-      </ul>
+      <table class="table table-striped table-hover table-condensed table-responsive">
+        <thead>
+          <tr>
+            <th>
+              <a href="#" ng-click="$ctrl.orderProp='id'; $ctrl.reverseSort=!reverseSort">
+                ID
+                <span ng-show="!$ctrl.reverseSort">^</span>
+                <span ng-show="$ctrl.reverseSort">v</span>
+              </a>
+            </th>
+            <th>First</th>
+            <th>Last</th>
+            <th>ADV</th>
+            <th>Grade</th>
+          </tr>
+        </thead>
+      <tbody>
+        <tr class='clickable-row' ng-click="$ctrl.goto(student.id)" style="cursor:pointer" ng-repeat="student in $ctrl.students | filter:$ctrl.query | orderBy:$ctrl.orderProp">
+          <td>{{student.id}}</td>
+          <td>{{student.firstname}}</td>
+          <td>{{student.lastname}}</td>
+          <td>{{student.advisory}}</td>
+          <td>{{student.grade}}</td>
+        </tr>
+      </tbody>
+    </table>
     </div>
   </div>
 </div>

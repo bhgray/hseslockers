@@ -12,12 +12,31 @@
     </div>
     <div class="col-md-10">
       <!-- body -->
-      <ul class="lockers">
+      <table class="table table-striped table-hover table-condensed table-responsive">
+        <thead>
+          <tr>
+            <th>Number</th>
+            <th>Location</th>
+            <th>Student</th>
+          </tr>
+        </thead>
+      <tbody>
+        <tr class='clickable-row' ng-click="$ctrl.goto(locker.id)" style="cursor:pointer" ng-repeat="locker in $ctrl.lockers | filter:$ctrl.query | orderBy:$ctrl.orderProp">
+          <td>{{locker.id}}</td>
+          <td>{{locker.location}}</td>
+          <td>A. Student</td>
+        </tr>
+      </tbody>
+    </table>
+
+
+
+      <!-- <ul class="lockers">
       <li ng-repeat="locker in $ctrl.lockers | filter:$ctrl.query | orderBy:$ctrl.orderProp">
       <a href="#!/lockers/{{locker.id}}">[{{locker.id}}] {{locker.location}}</a>
 
       </li>
-      </ul>
+      </ul> -->
     </div>
   </div>
 </div>

@@ -12,5 +12,10 @@ angular.module('lockerList')
         var self = this;
         self.lockers = Locker.query();
         self.orderProp = 'id';
+        self.reverseSort = false;
+
+        self.goto = function(id) {
+          window.location = '#!/lockers/' + id;
+        }
     }]
 });

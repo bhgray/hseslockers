@@ -52,4 +52,10 @@
 
   * added branches:  develop and 04-ui-boostrap
   * using: https://www.atlassian.com/git/tutorials/comparing-workflows/gitflow-workflow
-  * 
+
+2016-10-12-WED
+  * branch: 04-ui-bootstrap
+  * brought in bootstrap via angular-bootstrap
+  * converted students-list and lockers-list to bootstrap tables
+  * in the process of converting the sorting from the drop down menu to
+    a clickable header, but it's not working so far...

@@ -12,5 +12,10 @@ angular.module('studentList')
         var self = this;
         self.students = Student.query();
         self.orderProp = 'lastname';
+        self.reverseSort = false;
+
+        self.goto = function(id) {
+          window.location = '#!/students/' + id;
+        }
     }]
 });
