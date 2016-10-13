@@ -5,6 +5,10 @@ body {
 h1 {
   border-bottom: 1px solid gray;
 }
+
+.tableheader {
+  cursor: pointer;
+}
 /* View: Student list */
 .students {
   list-style: none;

@@ -59,3 +59,13 @@
   * converted students-list and lockers-list to bootstrap tables
   * in the process of converting the sorting from the drop down menu to
     a clickable header, but it's not working so far...
+
+2016-10-13-THU
+  * Oh.  student-list is being initialized twice.  the onInit() function in the controller
+    is being recalled each time.... b/c of the <a> tag reloading in the sort?  dunno?
+  * Wow.  Just writing that last note led me to change all the <a> elements that were
+    hosting the ng-clicks to <div>s.  Problem solved.  It was the <a> tag that was reloading
+    the entire page and thus re-initializing the controller, thus setting all the
+    sorting back to the initial settings.
+  * todo:  when the sorting is clicked, it changes the width of the columns.
+  * todo:  add this all to lockers.

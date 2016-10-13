@@ -1,21 +1,31 @@
-'use strict';
+StudentListCtrl.$inject = ['Student'];
+function StudentListCtrl(Student) {
+
+    var self = this;
+    self.students = Student.query();
+    self.orderProp = 'lastname';
+    self.reverseSort = false;
+
+    self.$onInit = function() {
+      console.log('onInit StudentList component');
+    }
+
+    self.goto = function(id) {
+      window.location = '#!/students/' + id;
+    };
+
+    self.changeSort = function(newSort) {
+      self.orderProp = newSort;
+    };
+
+    self.changeReverseSort = function() {
+      self.reverseSort = !self.reverseSort;
+    };
+}
+
 
 angular.module('studentList')
 .component('studentList', {
   templateUrl: '/components/student-list/student-list.template.html',
-    controller: ['Student',
-      function StudentListCtrl(Student) {
-        // this is so that you can refer to this object in the callback b/c
-        // 'this' is out of scope in the callback.
-        //  Note: not necessary anymore now that we are not using $http service
-        // directly here.
-        var self = this;
-        self.students = Student.query();
-        self.orderProp = 'lastname';
-        self.reverseSort = false;
-
-        self.goto = function(id) {
-          window.location = '#!/students/' + id;
-        }
-    }]
+  controller: StudentListCtrl
 });

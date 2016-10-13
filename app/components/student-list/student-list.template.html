@@ -3,13 +3,13 @@
     <div class="col-md-2">
     <!-- sidebar content -->
       <p>Search:  <input ng-model="$ctrl.query" /></p>
-      <p>Sort By:
+      <!-- <p>Sort By:
         <select ng-model="$ctrl.orderProp">
           <option value="firstname">First Name</option>
           <option value="idnumber">ID Number</option>
           <option value="lastname">Last Name</option>
         </select>
-      </p>
+      </p> -->
     </div>
     <div class="col-md-10">
       <!-- body -->
@@ -17,20 +17,44 @@
         <thead>
           <tr>
             <th>
-              <a href="#" ng-click="$ctrl.orderProp='id'; $ctrl.reverseSort=!reverseSort">
+              <div class="tableheader" href="#" ng-click="$ctrl.changeSort('id'); $ctrl.changeReverseSort()">
                 ID
-                <span ng-show="!$ctrl.reverseSort">^</span>
-                <span ng-show="$ctrl.reverseSort">v</span>
-              </a>
+                <span ng-show="$ctrl.orderProp === 'id' && !$ctrl.reverseSort" class="glyphicon glyphicon-triangle-bottom"></span>
+                <span ng-show="$ctrl.orderProp === 'id' && $ctrl.reverseSort" class="glyphicon glyphicon-triangle-top"></span>
+              </div>
             </th>
-            <th>First</th>
-            <th>Last</th>
-            <th>ADV</th>
-            <th>Grade</th>
+            <th>
+              <div  class="tableheader" href="#" ng-click="$ctrl.changeSort('firstname'); $ctrl.changeReverseSort()">
+                First
+                <span ng-show="$ctrl.orderProp === 'firstname' && !$ctrl.reverseSort" class="glyphicon glyphicon-triangle-bottom"></span>
+                <span ng-show="$ctrl.orderProp === 'firstname' && $ctrl.reverseSort" class="glyphicon glyphicon-triangle-top"></span>
+              </div>
+            </th>
+            <th>
+              <div  class="tableheader" href="#" ng-click="$ctrl.changeSort('lastname'); $ctrl.changeReverseSort()">
+                Last
+                <span ng-show="$ctrl.orderProp === 'lastname' && !$ctrl.reverseSort" class="glyphicon glyphicon-triangle-bottom"></span>
+                <span ng-show="$ctrl.orderProp === 'lastname' && $ctrl.reverseSort" class="glyphicon glyphicon-triangle-top"></span>
+              </div>
+            </th>
+            <th>
+              <div  class="tableheader" href="#" ng-click="$ctrl.changeSort('advisory'); $ctrl.changeReverseSort()">
+                ADV
+                <span ng-show="$ctrl.orderProp === 'advisory' && !$ctrl.reverseSort" class="glyphicon glyphicon-triangle-bottom"></span>
+                <span ng-show="$ctrl.orderProp === 'advisory' && $ctrl.reverseSort" class="glyphicon glyphicon-triangle-top"></span>
+              </div>
+            </th>
+            <th>
+              <div  class="tableheader" href="#" ng-click="$ctrl.changeSort('grade'); $ctrl.changeReverseSort()">
+                Grade
+                <span ng-show ="$ctrl.orderProp === 'grade' && !$ctrl.reverseSort" class="glyphicon glyphicon-triangle-bottom"></span>
+                <span ng-show="$ctrl.orderProp === 'grade' && $ctrl.reverseSort" class="glyphicon glyphicon-triangle-top"></span>
+              </div>
+            </th>
           </tr>
         </thead>
       <tbody>
-        <tr class='clickable-row' ng-click="$ctrl.goto(student.id)" style="cursor:pointer" ng-repeat="student in $ctrl.students | filter:$ctrl.query | orderBy:$ctrl.orderProp">
+        <tr class='clickable-row' ng-click="$ctrl.goto(student.id)" style="cursor:pointer" ng-repeat="student in $ctrl.students | filter:$ctrl.query | orderBy:$ctrl.orderProp:$ctrl.reverseSort">
           <td>{{student.id}}</td>
           <td>{{student.firstname}}</td>
           <td>{{student.lastname}}</td>
