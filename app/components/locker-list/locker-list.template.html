@@ -3,25 +3,43 @@
     <div class="col-md-2">
     <!-- sidebar content -->
       <p>Search:  <input ng-model="$ctrl.query" /></p>
-      <p>Sort By:
+      <!-- <p>Sort By:
         <select ng-model="$ctrl.orderProp">
           <option value="id">Locker Number</option>
           <option value="location">Locker Location</option>
         </select>
-      </p>
+      </p> -->
     </div>
     <div class="col-md-10">
       <!-- body -->
       <table class="table table-striped table-hover table-condensed table-responsive">
         <thead>
           <tr>
-            <th>Number</th>
-            <th>Location</th>
-            <th>Student</th>
+            <th>
+              <div class="tableheader" href="#" ng-click="$ctrl.orderProp = 'id'; $ctrl.reverseSort = !$ctrl.reverseSort">
+                Number
+                <span ng-show="$ctrl.orderProp === 'id' && !$ctrl.reverseSort" class="glyphicon glyphicon-triangle-bottom"></span>
+                <span ng-show="$ctrl.orderProp === 'id' && $ctrl.reverseSort" class="glyphicon glyphicon-triangle-top"></span>
+              </div>
+            </th>
+            <th>
+              <div class="tableheader" href="#" ng-click="$ctrl.orderProp = 'location'; $ctrl.reverseSort = !$ctrl.reverseSort">
+                Location
+                <span ng-show="$ctrl.orderProp === 'location' && !$ctrl.reverseSort" class="glyphicon glyphicon-triangle-bottom"></span>
+                <span ng-show="$ctrl.orderProp === 'location' && $ctrl.reverseSort" class="glyphicon glyphicon-triangle-top"></span>
+              </div>
+            </th>
+            <th>
+              <div class="tableheader" href="#" ng-click="$ctrl.orderProp = 'student'; $ctrl.reverseSort = !$ctrl.reverseSort">
+                Student
+                <span ng-show="$ctrl.orderProp === 'student' && !$ctrl.reverseSort" class="glyphicon glyphicon-triangle-bottom"></span>
+                <span ng-show="$ctrl.orderProp === 'student' && $ctrl.reverseSort" class="glyphicon glyphicon-triangle-top"></span>
+              </div>
+            </th>
           </tr>
         </thead>
       <tbody>
-        <tr class='clickable-row' ng-click="$ctrl.goto(locker.id)" style="cursor:pointer" ng-repeat="locker in $ctrl.lockers | filter:$ctrl.query | orderBy:$ctrl.orderProp">
+        <tr class='clickable-row' ng-click="$ctrl.goto(locker.id)" style="cursor:pointer" ng-repeat="locker in $ctrl.lockers | filter:$ctrl.query | orderBy:$ctrl.orderProp:$ctrl.reverseSort">
           <td>{{locker.id}}</td>
           <td>{{locker.location}}</td>
           <td>A. Student</td>

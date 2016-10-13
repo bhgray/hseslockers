@@ -17,35 +17,35 @@
         <thead>
           <tr>
             <th>
-              <div class="tableheader" href="#" ng-click="$ctrl.changeSort('id'); $ctrl.changeReverseSort()">
+              <div class="tableheader" href="#" ng-click="$ctrl.orderProp = 'id'; $ctrl.reverseSort = !$ctrl.reverseSort">
                 ID
                 <span ng-show="$ctrl.orderProp === 'id' && !$ctrl.reverseSort" class="glyphicon glyphicon-triangle-bottom"></span>
                 <span ng-show="$ctrl.orderProp === 'id' && $ctrl.reverseSort" class="glyphicon glyphicon-triangle-top"></span>
               </div>
             </th>
             <th>
-              <div  class="tableheader" href="#" ng-click="$ctrl.changeSort('firstname'); $ctrl.changeReverseSort()">
+              <div  class="tableheader" href="#" ng-click="$ctrl.orderProp = 'firstname'; $ctrl.reverseSort = !$ctrl.reverseSort">
                 First
                 <span ng-show="$ctrl.orderProp === 'firstname' && !$ctrl.reverseSort" class="glyphicon glyphicon-triangle-bottom"></span>
                 <span ng-show="$ctrl.orderProp === 'firstname' && $ctrl.reverseSort" class="glyphicon glyphicon-triangle-top"></span>
               </div>
             </th>
             <th>
-              <div  class="tableheader" href="#" ng-click="$ctrl.changeSort('lastname'); $ctrl.changeReverseSort()">
+              <div  class="tableheader" href="#" ng-click="$ctrl.orderProp = 'lastname'; $ctrl.reverseSort = !$ctrl.reverseSort">
                 Last
                 <span ng-show="$ctrl.orderProp === 'lastname' && !$ctrl.reverseSort" class="glyphicon glyphicon-triangle-bottom"></span>
                 <span ng-show="$ctrl.orderProp === 'lastname' && $ctrl.reverseSort" class="glyphicon glyphicon-triangle-top"></span>
               </div>
             </th>
             <th>
-              <div  class="tableheader" href="#" ng-click="$ctrl.changeSort('advisory'); $ctrl.changeReverseSort()">
+              <div  class="tableheader" href="#" ng-click="$ctrl.orderProp = 'advisory'; $ctrl.reverseSort = !$ctrl.reverseSort">
                 ADV
                 <span ng-show="$ctrl.orderProp === 'advisory' && !$ctrl.reverseSort" class="glyphicon glyphicon-triangle-bottom"></span>
                 <span ng-show="$ctrl.orderProp === 'advisory' && $ctrl.reverseSort" class="glyphicon glyphicon-triangle-top"></span>
               </div>
             </th>
             <th>
-              <div  class="tableheader" href="#" ng-click="$ctrl.changeSort('grade'); $ctrl.changeReverseSort()">
+              <div  class="tableheader" href="#" ng-click="$ctrl.orderProp = 'grade'; $ctrl.reverseSort = !$ctrl.reverseSort">
                 Grade
                 <span ng-show ="$ctrl.orderProp === 'grade' && !$ctrl.reverseSort" class="glyphicon glyphicon-triangle-bottom"></span>
                 <span ng-show="$ctrl.orderProp === 'grade' && $ctrl.reverseSort" class="glyphicon glyphicon-triangle-top"></span>

@@ -1,3 +1,5 @@
+'use strict';
+
 StudentListCtrl.$inject = ['Student'];
 function StudentListCtrl(Student) {
 
@@ -6,21 +8,10 @@ function StudentListCtrl(Student) {
     self.orderProp = 'lastname';
     self.reverseSort = false;
 
-    self.$onInit = function() {
-      console.log('onInit StudentList component');
-    }
-
     self.goto = function(id) {
       window.location = '#!/students/' + id;
     };
 
-    self.changeSort = function(newSort) {
-      self.orderProp = newSort;
-    };
-
-    self.changeReverseSort = function() {
-      self.reverseSort = !self.reverseSort;
-    };
 }
 
 
