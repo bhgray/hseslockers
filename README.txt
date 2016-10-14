@@ -68,4 +68,6 @@
     the entire page and thus re-initializing the controller, thus setting all the
     sorting back to the initial settings.
   * todo:  when the sorting is clicked, it changes the width of the columns.
-  * todo:  add this all to lockers.
+
+2016-10-14-FRI
+  * 
