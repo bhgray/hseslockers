@@ -51,6 +51,13 @@
                 <span ng-show="$ctrl.orderProp === 'grade' && $ctrl.reverseSort" class="glyphicon glyphicon-triangle-top"></span>
               </div>
             </th>
+            <th>
+              <div  class="tableheader" href="#" ng-click="$ctrl.orderProp = 'locker'; $ctrl.reverseSort = !$ctrl.reverseSort">
+                Locker
+                <span ng-show ="$ctrl.orderProp === 'locker' && !$ctrl.reverseSort" class="glyphicon glyphicon-triangle-bottom"></span>
+                <span ng-show="$ctrl.orderProp === 'locker' && $ctrl.reverseSort" class="glyphicon glyphicon-triangle-top"></span>
+              </div>
+            </th>
           </tr>
         </thead>
       <tbody>
@@ -60,6 +67,7 @@
           <td>{{student.lastname}}</td>
           <td>{{student.advisory}}</td>
           <td>{{student.grade}}</td>
+          <td>{{student.locker[0].id}}</td>
         </tr>
       </tbody>
     </table>
