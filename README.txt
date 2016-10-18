@@ -70,4 +70,30 @@
   * todo:  when the sorting is clicked, it changes the width of the columns.
 
 2016-10-14-FRI
-  * 
+  * branch 05-detail-edit
+  * using angular-xeditable (https://vitalets.github.io/angular-xeditable/)
+  * bower install angular-xeditable --save
+  * works on student-detail, but doesn't save back to server. check out the
+    onbeforesave feature on xeditable on github tomorrow.
+
+2016-10-15-SAT
+  * Locker and student editing
+    + bulk edit:  edit all shown entries (e.g., change advisory, change grade)
+    + search on sorted column (to avoid getting all results in search, e.g., search
+      only on locker, name, id, etc...)
+    + change locker (shows list of lockers that can be sorted, filtered.  show only
+      available lockers or all lockers)
+    + attach picture to student, locker (for combination?  damage report, etc...)
+    + data entry by scantron?
+    + admin functions
+      - re-sync students:  pulls in new csv file of students, matches them against
+        their ID numbers, and updates grade, advisory
+      - re-assign all lockers:  with option to preserve current lockers
+      - re-assign lockers in bulk:  move entire blocks from one place to another.
+        moving blocks would overwrite the locker assignments for those lockers.
+      - trouble lists:  of unassigned students, unassigned lockers, conflicts, damage
+        reports.
+2016-10-18-TUE
+  * 05-detail-edit
+  * form works in student-detail.component.  UPDATE, DELETE, and cancel....
+  * puts changes back to the server....!

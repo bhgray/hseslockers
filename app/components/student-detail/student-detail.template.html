@@ -1,5 +1,54 @@
-<h1>Student Detail View </h1>
-<h2>[{{$ctrl.student.id}}] {{$ctrl.student.lastname}}, {{$ctrl.student.firstname}}</h2>
-<h2>Advisory:  {{$ctrl.student.advisory}} (Grade {{$ctrl.student.grade}})</h2>
-<h2>Locker Assignment</h2>
-<h2># {{$ctrl.locker[0].id}} at location {{$ctrl.locker[0].location}}</h2>
+  <h1>Student Detail View for <br>   {{$ctrl.student.firstname}} {{$ctrl.student.lastname | uppercase}} (ID:  {{$ctrl.student.id}})</h1>
+
+<form editable-form name="editableForm" onaftersave="$ctrl.saveStudent()">
+  <div>
+    <span class="title">ID</span>
+    <span editable-text="$ctrl.student.id" e-name="id" e-required>{{$ctrl.student.id || 'empty'}}</span>
+  </div>
+  <div>
+    <span class="title">Last</span>
+    <span editable-text="$ctrl.student.lastname" e-name="last" e-required>{{$ctrl.student.lastname || 'empty'}}</span>
+  </div>
+
+  <div>
+    <span class="title">First</span>
+    <span editable-text="$ctrl.student.firstname" e-name="first" e-required>{{$ctrl.student.firstname || 'empty'}}</span>
+  </div>
+
+  <div>
+    <span class="title">Advisory</span>
+    <span editable-text="$ctrl.student.advisory" e-name="advisory" e-required>{{$ctrl.student.advisory || 'empty'}}</span>
+  </div>
+
+  <div>
+    <span class="title">Grade</span>
+    <span editable-text="$ctrl.student.grade" e-name="grade" e-required>{{$ctrl.student.advisory || 'empty'}}</span>
+  </div>
+
+  <div>
+    <span class="title">Locker</span>
+    <span editable-text="$ctrl.student.locker[0].id" e-name="locker" e-required>{{$ctrl.student.locker[0].id || 'unassigned'}}</span>
+  </div>
+  <div>
+    <span class="title">Location</span>
+    <span editable-text="$ctrl.student.locker[0].location" e-name="location" e-required>{{$ctrl.student.locker[0].location || 'n/a'}}</span>
+  </div>
+  <div>
+        <!-- button to show form -->
+        <button type="button" class="btn btn-default" ng-click="editableForm.$show()" ng-show="!editableForm.$visible">
+          Edit
+        </button>
+        <!-- buttons to submit / cancel form -->
+        <span ng-show="editableForm.$visible">
+          <button type="submit" class="btn btn-primary" ng-disabled="editableForm.$waiting">
+            Save
+          </button>
+          <button type="button" class="btn btn-danger" ng-disabled="editableForm.$waiting" ng-click="$ctrl.deleteStudent()">
+            Delete
+          </button>
+          <button type="button" class="btn btn-default" ng-disabled="editableForm.$waiting" ng-click="editableForm.$cancel()">
+            Cancel
+          </button>
+        </span>
+      </div>
+</form>

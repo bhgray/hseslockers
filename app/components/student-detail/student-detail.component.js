@@ -10,11 +10,24 @@ angular.
   component('studentDetail', {
     templateUrl: 'components/student-detail/student-detail.template.html',
     controller: ['$routeParams', 'Student', 'Locker',
-      function StudentDetailController($routeParams, Student, Locker) {
+      function StudentDetailController($routeParams, Student, Locker, editableOptions) {
         var self = this;
         var targetId = $routeParams.studentId;
         self.student = Student.get({studentId: targetId});
         self.locker = Locker.getLockerForStudent({studentId:  targetId});
+
+        self.saveStudent = function() {
+          self.student.$update(function() {
+            console.log("updated " + self.student);
+          });
+        }
+        self.deleteStudent = function() {
+          self.student.$delete(function() {
+            console.log("deleted " + self.student);
+            window.location = '#!/students/';
+          });
+        }
+
       }
     ]
   });

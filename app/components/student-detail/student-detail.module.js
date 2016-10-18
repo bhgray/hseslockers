@@ -1,1 +1,1 @@
-angular.module('studentDetail', ['core.student', 'core.locker']);
+angular.module('studentDetail', ['core.student', 'core.locker', 'xeditable']);

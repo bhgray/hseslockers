@@ -8,5 +8,6 @@ angular.module('hseslockers', [
   'studentDetail',
   'lockerList',
   'lockerDetail',
-  'admin'
+  'admin',
+  'xeditable'
 ]);
