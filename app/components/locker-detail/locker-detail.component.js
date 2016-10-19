@@ -7,6 +7,21 @@ angular.module('lockerDetail')
       function LockerDetailController($routeParams, Locker) {
         var self = this;
         self.locker = Locker.get({lockerId: $routeParams.lockerId});
+
+        self.saveLocker = function() {
+          self.locker.$update(function() {
+            console.log("updated " + self.locker);
+          });
+        }
+        self.deleteStudent = function() {
+          self.locker.$delete(function() {
+            console.log("deleted " + self.locker);
+            window.location = '#!/lockers/';
+          });
+        }
+
+
+
       }
     ]
   });

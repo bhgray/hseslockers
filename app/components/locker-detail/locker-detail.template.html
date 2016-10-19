@@ -1,1 +1,45 @@
 TBD: Detail view for <span>[{{$ctrl.locker.id}}] {{$ctrl.locker.location}}</span>
+<h1>Student Detail View for <br>   {{$ctrl.locker.id}}, Location: {{$ctrl.locker.location}}</h1>
+
+<form editable-form name="editableForm" onaftersave="$ctrl.saveLocker()">
+<div>
+  <span class="title">Number</span>
+  <span editable-text="$ctrl.locker.id" e-name="id" e-required>{{$ctrl.locker.id}}</span>
+</div>
+<div>
+  <span class="title">Location</span>
+  <span editable-text="$ctrl.locker.location" e-name="location" e-required>{{$ctrl.locker.location || 'empty'}}</span>
+</div>
+
+<div>
+  <span class="title">Assigned?</span>
+  <span editable-text="$ctrl.locker.assigned" e-name="assigned" e-required>{{$ctrl.locker.assigned}}</span>
+</div>
+<div ng-show="$ctrl.locker.assigned">
+  <span class="title">Student ID for assignment</span>
+  <span editable-text="$ctrl.locker.studentId" e-name="studentId" e-required><a href="#!/students/{{$ctrl.locker.studentId}}"> {{$ctrl.locker.studentId}}  (click for detail)</a></span>
+</div>
+
+<div>
+  <span class="title">Notes</span>
+  <span editable-text="$ctrl.locker.note" e-name="note" e-required>{{$ctrl.locker.note || 'none'}}</span>
+</div>
+<div>
+      <!-- button to show form -->
+      <button type="button" class="btn btn-default" ng-click="editableForm.$show()" ng-show="!editableForm.$visible">
+        Edit
+      </button>
+      <!-- buttons to submit / cancel form -->
+      <span ng-show="editableForm.$visible">
+        <button type="submit" class="btn btn-primary" ng-disabled="editableForm.$waiting">
+          Save
+        </button>
+        <button type="button" class="btn btn-danger" ng-disabled="editableForm.$waiting" ng-click="$ctrl.deleteStudent()">
+          Delete
+        </button>
+        <button type="button" class="btn btn-default" ng-disabled="editableForm.$waiting" ng-click="editableForm.$cancel()">
+          Cancel
+        </button>
+      </span>
+    </div>
+</form>
